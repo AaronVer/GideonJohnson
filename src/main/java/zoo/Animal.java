@@ -13,6 +13,7 @@ package zoo;
 public class Animal implements Comparable<Animal>{
     String species;
     int temp = 0;
+    // The below line is a constructor. This is what accepts an input to make an object.
     public Animal(String s){
         species = s;
     }

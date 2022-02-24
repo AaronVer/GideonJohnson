@@ -2,27 +2,16 @@ package zoo;
 
 public class AnimalTree<T extends Comparable<T>> {
 
+    //Creates first Branch object named "head"
     AnimalBranch<T> head;
 
     public AnimalTree() {
 
     }
 
-
-//    process:
-//    check if head exists
-//    if exists, check if left child exists
-//    if left child exists, switch currently examined branch to left child
-//    new branch is greater than current branch, so check if right child exists
-//    right child does not exist, so we set current.right to a new animalBranch
-
-//    our toolbox:
-//    we will need to keep track of the current branch
-//    we will need to continue while a empty slot has not been found
-//    we will need to check if head is null first
-
-
-    // Double and tripple check to see if the below function is correct
+    // Animal Branches are objects as well as Animals. This creates a new Branch object named Head, then
+    // begins the tree process. Because each Branch has a Left and a Right, it is able to continue downwards
+    // and create the overall tree structure.
     public boolean add(T a) {
         // the head starts at the top of the tree. If it is null, then that means the
         // tree hasn't started yet. So this fills the first slot out.
@@ -67,9 +56,7 @@ public class AnimalTree<T extends Comparable<T>> {
         }
 
         return false;
-
     }
-
     // Start of the "contains function"
     public boolean contains(T a) {
         if (head == null) {
@@ -78,20 +65,13 @@ public class AnimalTree<T extends Comparable<T>> {
         } else {
             AnimalBranch current = head;
             while (true) {
-                // how do we decide if go left or right in the tree search?
-                // we do this by having a method that compares the new item to whatever
-                // branch we're looking at
+                // Go left if our animal is less than the current slot, go right if it is more than.
                 if (current.getAnimal().compareTo(a) < 0) {
                     System.out.println("Current animal: " + current + ", Branching left");
-//                    what if we need to move left, but that space is empty?
-//                    we set that new item to the new animal
-//                    we also exit out of the add method: our job is complete
                     if (current.left == null) {
                         System.out.println("Animal does not exist: " + a);
                         return false;
                     } else {
-
-
                         current = current.left;
                     }
                 } else if (current.getAnimal().compareTo(a) > 0) {
