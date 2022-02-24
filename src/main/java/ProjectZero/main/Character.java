@@ -73,6 +73,7 @@ public class Character<O> {
     this.Dexterity = Dexterity;
     this.Strength = Strength;
     this.Fortitude = Fortitude;
+
     this.Wisdom = Wisdom;
     this.Resilience = Resilience;
     this.Precision = Precision;
@@ -346,7 +347,7 @@ public class Character<O> {
                     }
 
                     System.out.println("Pick one new spell to learn:");
-                    System.out.println("Destruction Spells:" + DestructionSpellBuffer[0] + "  " + RestorationSpellBuffer[1] + "  " + DestructionSpellBuffer[2]);
+                    System.out.println("Destruction Spells:" + DestructionSpellBuffer[0] + "  " + DestructionSpellBuffer[1] + "  " + DestructionSpellBuffer[2]);
                     System.out.println("Restoration Spells:" + RestorationSpellBuffer[0] + "  " + RestorationSpellBuffer[1] + "  " + RestorationSpellBuffer[2]);
                     System.out.println("Amplification Spells:" + AmplificationSpellBuffer[0] + "  " + AmplificationSpellBuffer[1] + "  " + AmplificationSpellBuffer[2]);
                     EnteredSpell = input.next();

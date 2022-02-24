@@ -1,14 +1,27 @@
 package com.revature.model;
 
-public class Artist {
-    private String name;
-    private int artist_id;
+import javax.persistence.Table;
 
-    // This is for object creation with no SQL statements
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+@Table(name="Artist")
+public class Artist {
+    @Column(name="name")
+    private String name;
+    @Id
+    @Column(name="artist_id")
+    private int artist_id;
 
     public Artist(String name, int artist_id) {
         this.name = name;
         this.artist_id = artist_id;
+    }
+
+    public Artist() {
+
     }
 
     public String getName() {
